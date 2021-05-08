@@ -1,0 +1,37 @@
+memset =[x] -> change memory value to your desire
+bzero = [x] -> add a '\0' to a lenght of value
+memcpy = [x] -> copy the lenght of wanted
+memccpy = [x] -> copy the lenght of wanted or until it find x
+memmove = [x] -> copy a part of memory while not caring  if there a overlap
+memchr = [x] -> find where the location of a byte by return a ptr to the first occurence
+memcmp = [x] -> compare the data of each seq if positive first bigger else smaller
+strlen = [x] -> lenght of string
+strlcpy = [x] -> copy to newstring while adding what is possible;
+strlcat = []
+strchr = []
+strrchr = []
+strnstr = []
+strncmp =[]
+atoi = []
+isalpha = []
+isdigit = []
+isalnum = []
+isascii = []
+isprint = []
+toupper = []
+tolower = []
+calloc = []
+strdup = []
+ft_substr = []
+ft_strjoin = []
+ft_strtrim = []
+ft_split = []
+ft_itoa = []
+ft_strmapi = []
+ft_putstr_fd = []
+ft_putendl_fd = []
+ft_putnbr_fd = []
+
+extra -->>>>><<
+ft_strnlen_extra ->> get the lenght of a string until
+it find a '\0' or get the upper bound
