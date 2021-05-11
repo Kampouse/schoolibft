@@ -6,10 +6,10 @@
 /*   By: kampr <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:43:13 by kampr             #+#    #+#             */
-/*   Updated: 2021/05/06 22:16:19 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/05/09 15:48:49 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h"
 void 	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
 	const char		*help_src = (char *)src;

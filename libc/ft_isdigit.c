@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 22:19:11 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:45:42 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/16 15:32:13 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/11 15:25:43 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
-void	*ft_memchr(const void *src, int value, unsigned int num)
-{
-	unsigned char	*heler_return;
-	unsigned char	*interator;
+#include "libft.h"
 
-	interator = (unsigned char *)src;
-	heler_return = NULL;
-	while ((interator != NULL) && (num--))
-	{
-		if (*interator != (unsigned char)value)
-			interator++;
-		else
-		{
-			heler_return = interator;
-		}
-	}
-	return (heler_return);
+int	ft_isdigit (char str)
+{
+	if (str >= '0' && str <= '9')
+		return (1);
+	return (0);
 }

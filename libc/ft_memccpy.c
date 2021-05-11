@@ -6,11 +6,10 @@
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 23:06:39 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/06 22:37:24 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/05/09 15:44:19 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "string.h"
-#include "stdio.h"
+#include "libft;.h"
 void	*ft_memccpy(void *dest, const void *src, int c, unsigned int n)
 {
 	unsigned int	i;

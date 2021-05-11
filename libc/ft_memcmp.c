@@ -6,9 +6,11 @@
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 16:31:59 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/08 17:23:05 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/05/09 15:46:45 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *first, const void *second, unsigned int lenght)
 {

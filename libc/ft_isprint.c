@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 22:19:11 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:45:42 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/16 19:13:30 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/11 15:24:17 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
-void	*ft_memchr(const void *src, int value, unsigned int num)
-{
-	unsigned char	*heler_return;
-	unsigned char	*interator;
+#include "libft.h"
 
-	interator = (unsigned char *)src;
-	heler_return = NULL;
-	while ((interator != NULL) && (num--))
-	{
-		if (*interator != (unsigned char)value)
-			interator++;
-		else
-		{
-			heler_return = interator;
-		}
-	}
-	return (heler_return);
+int	ft_isprint(char str)
+{
+	if (str <= 31 || str == 127)
+		return (0);
+	return (1);
 }

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 22:19:11 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:45:42 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/05/09 15:50:21 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/09 15:51:11 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
-void	*ft_memchr(const void *src, int value, unsigned int num)
-{
-	unsigned char	*heler_return;
-	unsigned char	*interator;
+#include "libft.h"
 
-	interator = (unsigned char *)src;
-	heler_return = NULL;
-	while ((interator != NULL) && (num--))
-	{
-		if (*interator != (unsigned char)value)
-			interator++;
-		else
-		{
-			heler_return = interator;
-		}
-	}
-	return (heler_return);
+unsigned int ft_strlcat(char *output,const char *src, unsigned int buff)
+{
+	unsigned int srclen;
+	unsigned int outputlen;
+	
+
+	  outputlen = strlen(output);
+	buff-= outputlen + 1;
+if(!buff)
+	return (outputlen);
+srclen = strlen(src);
+if(srclen > buff )
+	srclen = buff;
+memcpy(output + outputlen,src,srclen);
+output[outputlen + srclen] = '\0';
+return (srclen + outputlen);
 }

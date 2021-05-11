@@ -1,32 +1,16 @@
-#include "stdio.h"
-#include "string.h" 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/09 15:52:34 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/09 15:52:55 by jean-phil        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-unsigned int	ft_strlen(const char *str)
-{
-	unsigned int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
-{
-	unsigned int	i;
-	char			*heler_src;
-	char			*heler_dest;
-
-	i = 0;
-	 heler_src = (char *)src;
-	 heler_dest = (char *)dest;
-	while (i != n)
-	{
-		heler_dest[i] = heler_src[i];
-		i++;
-	}
-	return (dest);
-}
+#include "libft.h" 
 
 unsigned int	ft_strlcpy(char *output, char *src, unsigned int lenght)
 {

@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 22:19:11 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:45:42 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/22 07:58:55 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/03/23 08:24:21 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
-void	*ft_memchr(const void *src, int value, unsigned int num)
+int	ft_atoi(char *value)
 {
-	unsigned char	*heler_return;
-	unsigned char	*interator;
+	int		base;
+	int		nbr;
+	char	*ptr;
 
-	interator = (unsigned char *)src;
-	heler_return = NULL;
-	while ((interator != NULL) && (num--))
-	{
-		if (*interator != (unsigned char)value)
-			interator++;
-		else
-		{
-			heler_return = interator;
-		}
+	nbr = 0;
+	base = 1;
+	ptr = value;
+	while (*ptr == ' ' || (*ptr >= 9 && *ptr <= 13))
+		ptr++;
+	while (*ptr == '-' || *ptr == '+')
+	{	
+		if (*ptr == '-')
+			base *= -1;
+		ptr++;
 	}
-	return (heler_return);
+	while (*ptr >= '0' && *ptr <= '9')
+	{
+		nbr *= 10;
+		nbr += (int)(*ptr - '0');
+		ptr++;
+	}
+	return (nbr * base);
 }

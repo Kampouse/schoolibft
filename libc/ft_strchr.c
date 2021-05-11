@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 22:19:11 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:45:42 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/05/09 17:20:26 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/09 17:57:06 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"  
-void	*ft_memchr(const void *src, int value, unsigned int num)
-{
-	unsigned char	*heler_return;
-	unsigned char	*interator;
+#include "libft.h"
 
-	interator = (unsigned char *)src;
-	heler_return = NULL;
-	while ((interator != NULL) && (num--))
+char *ft_strchr(const char *str, int compared)
+{
+	unsigned int value; 
+	value = 0;
+	while (str[value])
 	{
-		if (*interator != (unsigned char)value)
-			interator++;
-		else
-		{
-			heler_return = interator;
-		}
-	}
-	return (heler_return);
+
+     if(str[value] == (char)compared)
+	 { 
+		return ( char*)&str[value];	
+	 }
+		value++;
+	}	
+return(NULL);
 }
+
