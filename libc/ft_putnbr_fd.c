@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 16:25:50 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/11 17:06:10 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/22 07:46:10 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/16 19:20:36 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "libft.h"
+#include "unistd.h"
 
-char	*ft_strnstr(char *str1, char *str2, unsigned int len)
+void	ft_putchar(char input, int fd)
 {
-	unsigned int	inc;
-	unsigned int	subinc;
+	write(fd, &input, 1);
+}
 
-	inc = 0;
-	while (str1[inc] && inc <= len)
+void	ft_putnbr(int input, int fd)
+{
+	unsigned int	nbr;
+
+	if (input < 0)
 	{
-		if (ft_strncmp(&str1[inc], str2, ft_strlen(str2)) == 0)
-		{
-			while (str1[inc + subinc] == str2[subinc])
-			{
-				subinc++;
-				if (subinc == ft_strlen(str2))
-					return (&str1[inc]);
-			}
-		}
-		subinc = 0;
-		inc++;
+		nbr = (unsigned int)(-1 * input);
+		ft_putchar('-', fd);
 	}
-	return (NULL);
+	else
+		nbr = (unsigned int)input;
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10, fd);
+		ft_putnbr(nbr % 10, fd);
+	}
+	else
+		ft_putchar(nbr + '0', fd);
+}
+
+void	ft_putnbrTest(void)
+{
+	ft_putnbr(200000, 1);
 }

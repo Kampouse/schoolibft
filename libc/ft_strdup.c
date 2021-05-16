@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 16:25:50 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/11 17:06:10 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/05/11 20:44:23 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/12 15:09:52 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "libft.h"
 
-char	*ft_strnstr(char *str1, char *str2, unsigned int len)
+char	*strdup(const char *str)
 {
-	unsigned int	inc;
-	unsigned int	subinc;
+	char	*output;
+	int		inc;
 
-	inc = 0;
-	while (str1[inc] && inc <= len)
+	c = 0;
+	output = malloc(sizeof(char) * ft_strlen(str));
+	if (!output)
+		return (NULL);
+	while (str[inc] != '\0')
 	{
-		if (ft_strncmp(&str1[inc], str2, ft_strlen(str2)) == 0)
-		{
-			while (str1[inc + subinc] == str2[subinc])
-			{
-				subinc++;
-				if (subinc == ft_strlen(str2))
-					return (&str1[inc]);
-			}
-		}
-		subinc = 0;
+		output[inc] = str[inc];
 		inc++;
 	}
-	return (NULL);
+	output[inc + 1] ='\0';
+	return (output);
 }

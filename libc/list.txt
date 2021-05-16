@@ -7,30 +7,33 @@ memchr = [x] -> find where the location of a byte by return a ptr to the first o
 memcmp = [x] -> compare the data of each seq if positive first bigger else smaller
 strlen = [x] -> lenght of string
 strlcpy = [x] -> copy to newstring while adding what is possible;
-strlcat = [x]  -> append to	a	sring the part it can
-strchr = [x]	-> return a string with the correct char
-strrchr = []
-strnstr = []
-strncmp =[]
-atoi = []
-isalpha = []
-isdigit = []
-isalnum = []
-isascii = []
-isprint = []
-toupper = []
-tolower = []
-calloc = []
-strdup = []
-ft_substr = []
-ft_strjoin = []
-ft_strtrim = []
-ft_split = []
-ft_itoa = []
-ft_strmapi = []
-ft_putstr_fd = []
-ft_putendl_fd = []
-ft_putnbr_fd = []
+strlcat = [x]  -> append to a   sring the part it can
+strchr = [x]    -> return a ptr to teh first instance of a char;
+strrchr = [x] -> return a ptr of the last instance of a char;
+strnstr = [x] -> find the first instance of said string;
+strncmp =[x]  -> compare the substring of x with y if x contain y return a ptr to that said location
+atoi = [x]    -> take a string and return a int with the depend sign from said
+                 string plus or  minus..
+isalpha = [x] -> look if the char is alpha
+isdigit = [x] -> look if the char is a digit 1-9
+isalnum = [x]  -> look for number and ascii char to a-z-A-Z;
+isascii = [x]  -> look it char is in the ascii table
+isprint = [x]  -> look if char is printable or not;
+toupper = [x]  -> take char to upper case if its not already...;
+tolower = [x]  -> take char to lower case if its not already...;
+calloc = [x]   -> allow memory while setting memory to
+there better implemenatation out there
+strdup = [x] -> take string and return the same string in different memory adress wih a ptr might
+return null if there too litte memory or the lenght of the string is zero..
+ft_substr = [] -> take index and copy until the end aka \0 or the said lenght as param
+ft_strjoin = [x] -> take list of string and add seperator beteween each;
+ft_strtrim = [x] -> remove a at front a set of char at front and at the end and return tethe this sequence
+ft_split = [x]-> take a string with a sep "a single char" into  **ptr;
+ft_itoa.c = [x]-> convert a nbr to a string using malloc like putnbr but to a string
+ft_strmapi = [x] make a duplicate of a string and then apply a fn to to these elems.
+ft_putstr_fd = [x]
+ft_putendl_fd = [x]
+ft_putnbr_fd = [x]
 
 extra -->>>>><<
 ft_strnlen_extra ->> get the lenght of a string until

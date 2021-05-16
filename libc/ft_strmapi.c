@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 16:25:50 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/11 17:06:10 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/05/16 14:51:25 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/05/16 15:17:19 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "libft.h"
+#include "stdlib.h"
+#include "libft.h"
 
-char	*ft_strnstr(char *str1, char *str2, unsigned int len)
+char	*ft_mapstr(const char *str, char (*fnptr)(char))
 {
-	unsigned int	inc;
-	unsigned int	subinc;
+	int				i;
+	unsigned int	len;
+	char			*ptr;
+	char			*copy;
 
-	inc = 0;
-	while (str1[inc] && inc <= len)
+	i = 0;
+	len = ft_strlen(str) + 1;
+	copy = malloc(sizeof(char) * len);
+	ptr = copy;
+	while (str[i])
 	{
-		if (ft_strncmp(&str1[inc], str2, ft_strlen(str2)) == 0)
-		{
-			while (str1[inc + subinc] == str2[subinc])
-			{
-				subinc++;
-				if (subinc == ft_strlen(str2))
-					return (&str1[inc]);
-			}
-		}
-		subinc = 0;
-		inc++;
+		*copy = (*fnptr)(str[i++]);
+		copy++;
 	}
-	return (NULL);
+	*copy = '\0';
+	return (ptr);
 }

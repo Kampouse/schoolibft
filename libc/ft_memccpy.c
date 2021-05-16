@@ -6,7 +6,7 @@
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 23:06:39 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/05/09 15:44:19 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/05/12 15:23:54 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft;.h"
@@ -26,6 +26,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, unsigned int n)
 	if (i == n)
 		return (NULL);
 	heler_dest[i++] = c;
-	heler_dest[i++] = '\0';
 	return (dest);
 }
